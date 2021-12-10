@@ -18,6 +18,14 @@ export const fetchSmurfs = () => {
     //     );
 };
 
+export const successfulFetch = smurfs => {
+    return({type:SUCCESSFUL_FETCH, payload: smurfs});
+}
+
+export const failedFetch = error => {
+    return({type:FAILED_FETCH, payload: error});
+}
+
 export const addSmurf = (newSmurf) => {
     return {
         type: ADD_SMURF,

@@ -15,7 +15,6 @@ export const initialState = {
 export const reducer = (state = initialState, action)=>{
     switch(action.type){
         case START_FETCH: {
-            console.log("fetch_start")
             return {
                 ...state,
                 loading: true,
