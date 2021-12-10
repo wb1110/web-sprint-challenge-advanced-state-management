@@ -7,24 +7,18 @@ export const ADD_SMURF = 'ADD_SMURF';
 export const ERROR_VALUE = 'ERROR_VALUE';
 
 export const fetchSmurfs = () => {
-    return ({ type: START_FETCH });
-    // axios
-    //     .get('http://localhost:3333/smurfs')
-    //     .then(res =>
-    //         dispatch({ type: SUCCESSFUL_FETCH, payload: res.data.results })
-    //     )
-    //     .catch(err => 
-    //         dispatch({ type: FAILED_FETCH, payload: err })
-    //     );
-};
-
-export const successfulFetch = smurfs => {
-    return({type:SUCCESSFUL_FETCH, payload: smurfs});
+    return (dispatch => {
+        dispatch({ type: START_FETCH });
+        axios.get('http://localhost:3333/smurfs')
+            .then(res =>
+                dispatch({ type: SUCCESSFUL_FETCH, payload: res.data })
+            )
+            .catch(err => 
+                dispatch({ type: FAILED_FETCH, payload: err })
+            );
+    });
 }
 
-export const failedFetch = error => {
-    return({type:FAILED_FETCH, payload: error});
-}
 
 export const addSmurf = (newSmurf) => {
     return {

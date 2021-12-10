@@ -3,26 +3,17 @@ import { connect } from "react-redux"
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
 import Header from './components/Header';
-import { fetchSmurfs, successfulFetch, failedFetch } from "./actions";
-import axios from 'axios';
+import { fetchSmurfs } from "./actions";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import "./App.css";
 
 const App = (props)=> {
 
+  const { fetchSmurfs} = props;
+
 useEffect(() => {
-  props.fetchSmurfs();
-  axios
-  .get('http://localhost:3333/smurfs')
-  .then(res =>
-      // dispatch({ type: SUCCESSFUL_FETCH, payload: res.data })
-      props.successfulFetch(res.data)
-  )
-  .catch(err => 
-      // dispatch({ type: FAILED_FETCH, payload: err })
-      props.failedFetch(err)
-      );
+  fetchSmurfs();
 }, []);
 
   return (
@@ -39,9 +30,7 @@ useEffect(() => {
 
 const mapActionsToProps = () => {
   return {
-    fetchSmurfs,
-    successfulFetch,
-    failedFetch
+    fetchSmurfs
   }
 }
 
