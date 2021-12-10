@@ -37,8 +37,8 @@ export const reducer = (state = initialState, action)=>{
         }
         case ADD_SMURF: {
             return {
-                ...state.smurfs,
-                    smurfs: action.payload,
+                ...state,
+                    smurfs: [...state.smurfs, action.payload],
                     loading: false,
                     error: ""
 

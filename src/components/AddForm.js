@@ -12,7 +12,6 @@ const AddForm = (props) => {
     
     //remove when error state is added
     const {error, errorMessage, addSmurf} = props;
-    console.log(props)
 
     const handleChange = e => {
         setState({
@@ -28,7 +27,7 @@ const AddForm = (props) => {
             errorMessage();
         } else {
             //dispatch an addSmurf action
-            addSmurf();
+            addSmurf(state.name, state.position, state.nickname, state.description);
         }
     }
 

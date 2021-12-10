@@ -14,6 +14,7 @@ import { connect } from 'react-redux';
             smurfs.map(smurf => {
             return(
             <Smurf smurf={smurf}/>
+            
             )
         })
     }
