@@ -1,8 +1,52 @@
 
 export const initialState = {
+    smurfs: [],
+    loading: false,
+    error: " "
 }
 
-const reducer = ()=>{
+export const reducer = (state = initialState, action)=>{
+    switch(action.type){
+        case 'START_FETCH': {
+            return {
+                ...state,
+                loading: true
+            }
+        }
+        case 'SUCCESSFUL_FETCH': {
+            return {
+                ...state,
+            }
+        }
+        case 'FAILED_FETCH': {
+            return {
+                ...state,
+            }
+        }
+        case 'ADD_SMURF': {
+            return {
+                ...state,
+                smurfs: [
+                    ...state.smurfs,
+                    {
+                        name: 'test',
+                        nickname: 'test',
+                        position: 'test',
+                        summary: 'test',
+                        id: 1
+                    }
+                ]
+            }
+        }
+        case 'ERROR_VALUE': {
+            return {
+                ...state,
+                error: "Error. Name, Position and Nickname are required fields"
+            }
+        }
+        default:
+            return state
+    }
 }
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
