@@ -90,7 +90,7 @@ In this project, you will build the reducer, actions and basic redux connects to
   * [X] Connect your error state slice, setError and addSmurf actions to the AddForm component.
   * [X] Replace all instances of the errorMessage static variable with your error message state slice. 
   * [X] Within the handleSubmit function, replace the static assignment to errorMessage with a call to the setError action. Test that an error is displayed when validation code fails.
-  * [ ] Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summery passed as arguments. Test that a smurf is correctly added to when the form is submitted.
+  * [X] Within the handleSubmit function, call your addSmurf action with the smurf name, position, nickname and summery passed as arguments. Test that a smurf is correctly added to when the form is submitted.
 
 ## Important Notes:
 
@@ -102,10 +102,10 @@ In this project, you will build the reducer, actions and basic redux connects to
 * Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work.
 
 ## Submission format
-* [ ] Submit via Codegrade by committing and pushing any new changes to **your main branch.**
-* [ ] Check Codegrade before the deadline to compare its results against your local tests.
-* [ ] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
-* [ ] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
+* [X] Submit via Codegrade by committing and pushing any new changes to **your main branch.**
+* [X] Check Codegrade before the deadline to compare its results against your local tests.
+* [X] Check Codegrade on the days following the Sprint Challenge for reviewer feedback. For more information on how to access and read your feedback, check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-c5147cee220c4044a25de28bcb6bb54a)
+* [X] New commits will be evaluated by Codegrade if pushed before the sprint challenge deadline.
 
 ## Interview Questions
 
@@ -113,8 +113,16 @@ Be prepared to demonstrate your understanding of this week's concepts by answeri
 
 1. What problem does the context API help solve?
 
+The context API provides an easier method to share data between components without prop drilling or the extensive setup of redux.
+
 2. In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+Actions are repeatable functions. Reducers are like a switch board for accessing actions. The store is known as a 'single source of truth' because it is like a global state/props bank for the actions and reducers to draw from.
 
 3. What does `redux-thunk` allow us to do? How does it change our `action-creators`?
 
+Redux-thunk allows us to call upon multiple actions at the same time.
+
 4. What is your favorite state management system you've learned and this sprint? Please explain why!
+
+Once I get the hang of redux... I think I will actually prefer it.
