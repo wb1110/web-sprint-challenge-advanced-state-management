@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 
 import AddForm from './components/AddForm';
 import SmurfList from './components/SmurfList';
@@ -10,7 +10,9 @@ import "./App.css";
 
 const App = ()=> {
 
-  console.log(fetchSmurfs())
+useEffect(() => {
+  fetchSmurfs();
+})
 
   return (
     <div className="App">
