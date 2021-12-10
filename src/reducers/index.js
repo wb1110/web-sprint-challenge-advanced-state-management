@@ -37,22 +37,18 @@ export const reducer = (state = initialState, action)=>{
         }
         case ADD_SMURF: {
             return {
-                ...state,
-                smurfs: [
-                    ...state.smurfs,
-                    {
-                        id: action.payload.id,
-                        name: action.payload.name,
-                        position: action.payload.position,
-                        nickname: action.payload.nickname,
-                        description: action.payload.description
-                    }
-                ]
+                ...state.smurfs,
+                    smurfs: action.payload,
+                    loading: false,
+                    error: ""
+
             }
+            
         }
         case ERROR_MESSAGE: {
             return {
                 ...state,
+                loading: false,
                 error: "Error. Name, Position and Nickname are required fields"
             }
         }
