@@ -20,10 +20,10 @@ export const fetchSmurfs = () => {
 }
 
 
-export const addSmurf = (name, position, nickname, description) => {
+export const addSmurf = (id, name, position, nickname, description) => {
     return {
         type: ADD_SMURF,
-        payload: {name, position, nickname, description}
+        payload: {id, name, position, nickname, description}
     }
 }
 

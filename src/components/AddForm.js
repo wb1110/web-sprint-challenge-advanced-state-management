@@ -27,7 +27,8 @@ const AddForm = (props) => {
             errorMessage();
         } else {
             //dispatch an addSmurf action
-            addSmurf(state.name, state.position, state.nickname, state.description);
+            const id = Date.now();
+            addSmurf(id, state.name, state.position, state.nickname, state.description);
         }
     }
 
