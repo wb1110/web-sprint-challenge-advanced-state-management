@@ -3,7 +3,7 @@ import {
     SUCCESSFUL_FETCH,
     FAILED_FETCH,
     ADD_SMURF,
-    ERROR_VALUE
+    ERROR_MESSAGE
 } from '../actions/index';
 
 export const initialState = {
@@ -41,16 +41,16 @@ export const reducer = (state = initialState, action)=>{
                 smurfs: [
                     ...state.smurfs,
                     {
-                        id:"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9",
-                        name:'Poppa Smurf',
-                        position:'Village Leader',
-                        nickname: 'Pops',
-                        description: 'Papa is the practical village leader and the father figure of 100 or so young Smurfs. He is easily identified by his red Smurf hat, pants, and a shortly-trimmed white beard and moustache.'
+                        id: action.payload.id,
+                        name: action.payload.name,
+                        position: action.payload.position,
+                        nickname: action.payload.nickname,
+                        description: action.payload.description
                     }
                 ]
             }
         }
-        case ERROR_VALUE: {
+        case ERROR_MESSAGE: {
             return {
                 ...state,
                 error: "Error. Name, Position and Nickname are required fields"

@@ -4,7 +4,7 @@ export const START_FETCH = 'START_FETCH';
 export const SUCCESSFUL_FETCH = 'SUCCESSFUL_FETCH';
 export const FAILED_FETCH = 'FAILED_FETCH';
 export const ADD_SMURF = 'ADD_SMURF';
-export const ERROR_VALUE = 'ERROR_VALUE';
+export const ERROR_MESSAGE = 'ERROR_MESSAGE';
 
 export const fetchSmurfs = () => {
     return (dispatch => {
@@ -27,10 +27,9 @@ export const addSmurf = (newSmurf) => {
     }
 }
 
-export const errorValue = (error) => {
+export const errorMessage = () => {
     return {
-        type: ERROR_VALUE,
-        payload: error
+        type: ERROR_MESSAGE
     }
 }
 
